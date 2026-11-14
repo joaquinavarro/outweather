@@ -20,4 +20,4 @@ ENV DATA_MODE=demo \
 EXPOSE 8000
 
 # One process serves the API and the built site at "/".
-CMD ["python", "-m", "rootshift", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "rootshift", "--host", "0.0.0.0"]
