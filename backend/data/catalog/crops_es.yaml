@@ -1,0 +1,14 @@
+# Spanish names for the crop catalog (UI only; the engine keeps the English id).
+version: "1.0.0"
+
+crops:
+  corn: Maíz
+  soybean: Soja
+  winter_wheat: Trigo de invierno
+  grain_sorghum: Sorgo grano
+  alfalfa: Alfalfa
+  oats: Avena
+  sunflower: Girasol
+  canola: Colza de invierno
+  cereal_rye: Centeno forrajero
+  fallow: Barbecho

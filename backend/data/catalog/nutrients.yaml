@@ -1,0 +1,79 @@
+# ROOTSHIFT nutrient catalog
+# Removal coefficients: kg of nutrient per tonne of harvested grain (or hay DM).
+# [P] placeholder values in the expected format; MUST be replaced by the
+# USDA Ag Data Commons dataset selected by the team, citing its DOI.
+# Rows without source_doi are not used at runtime (spec §7.3, P20).
+version: "2.0.0"
+
+coefficients:
+  - crop_id: corn
+    n_removal_kg_per_t: 15.5
+    p2o5_removal_kg_per_t: 6.4
+    k2o_removal_kg_per_t: 4.4
+    n_fixation_kg_per_ha: 0.0
+    source_doi: "TBD"
+    confidence: low
+
+  - crop_id: soybean
+    n_removal_kg_per_t: 55.0
+    p2o5_removal_kg_per_t: 12.0
+    k2o_removal_kg_per_t: 25.0
+    n_fixation_kg_per_ha: 56.0
+    source_doi: "TBD"
+    confidence: low
+
+  - crop_id: winter_wheat
+    n_removal_kg_per_t: 23.0
+    p2o5_removal_kg_per_t: 8.0
+    k2o_removal_kg_per_t: 5.0
+    n_fixation_kg_per_ha: 0.0
+    source_doi: "TBD"
+    confidence: low
+
+  - crop_id: grain_sorghum
+    n_removal_kg_per_t: 17.0
+    p2o5_removal_kg_per_t: 7.0
+    k2o_removal_kg_per_t: 4.0
+    n_fixation_kg_per_ha: 0.0
+    source_doi: "TBD"
+    confidence: low
+
+  - crop_id: alfalfa
+    n_removal_kg_per_t: 25.0
+    p2o5_removal_kg_per_t: 6.0
+    k2o_removal_kg_per_t: 22.0
+    n_fixation_kg_per_ha: 150.0
+    source_doi: "TBD"
+    confidence: low
+
+  - crop_id: oats
+    n_removal_kg_per_t: 18.0
+    p2o5_removal_kg_per_t: 7.0
+    k2o_removal_kg_per_t: 5.0
+    n_fixation_kg_per_ha: 0.0
+    source_doi: "TBD"
+    confidence: low
+
+  - crop_id: sunflower
+    n_removal_kg_per_t: 40.0
+    p2o5_removal_kg_per_t: 15.0
+    k2o_removal_kg_per_t: 25.0
+    n_fixation_kg_per_ha: 0.0
+    source_doi: "TBD"
+    confidence: low
+
+  - crop_id: canola
+    n_removal_kg_per_t: 35.0
+    p2o5_removal_kg_per_t: 14.0
+    k2o_removal_kg_per_t: 10.0
+    n_fixation_kg_per_ha: 0.0
+    source_doi: "TBD"
+    confidence: low
+
+  - crop_id: cereal_rye
+    n_removal_kg_per_t: 12.0
+    p2o5_removal_kg_per_t: 5.0
+    k2o_removal_kg_per_t: 12.0
+    n_fixation_kg_per_ha: 0.0
+    source_doi: "TBD"
+    confidence: low

@@ -1,0 +1,90 @@
+# Spanish copy for the hazard catalog, keyed by hazard id (spec D16).
+version: "1.0.0"
+
+hazards:
+  drought:
+    name: Sequía
+    playbook:
+      before:
+        - "Cambiar a un híbrido de ciclo más corto si el SPEI-3 de marzo baja de -0,8"
+        - "Mantener el rastrojo en superficie para reducir la evaporación"
+        - "Preirrigar para recargar la zona radicular antes del calor"
+      during:
+        - "Priorizar el agua disponible en floración"
+        - "Retrasar el abonado nitrogenado hasta que sea probable que llueva"
+      after:
+        - "Evitar labrar mientras el suelo esté seco"
+        - "Sembrar una cubierta tras la primera lluvia efectiva"
+  flood:
+    name: Inundación
+    playbook:
+      before:
+        - "Mantener limpios los drenajes y las salidas de la parcela"
+        - "No sembrar la parte más baja con el cultivo de mayor valor"
+      during:
+        - "No entrar con maquinaria mientras haya agua encharcada"
+        - "Documentar la superficie inundada para el seguro"
+      after:
+        - "Revisar el encostramiento y resembrar los huecos al drenar"
+        - "Vigilar enfermedades de raíz en las zonas encharcadas"
+  frost:
+    name: Helada
+    playbook:
+      before:
+        - "Usar la fecha de helada al 10 %, no la media, para siembras tempranas"
+        - "Mantener una cubierta tolerante al frío en las parcelas sensibles"
+      during:
+        - "Regar antes de una noche de helada radiativa para elevar el calor superficial"
+      after:
+        - "Evaluar la nascencia y resembrar solo si la densidad baja del 70 %"
+  heat:
+    name: Ola de calor
+    playbook:
+      before:
+        - "Evitar fechas de siembra que sitúen la floración en la semana más calurosa"
+        - "Elegir híbridos con mejor tolerancia al calor"
+      during:
+        - "Mantener el cultivo sin estrés en floración; regar si es posible"
+      after:
+        - "Revisar la polinización y ajustar las expectativas de cosecha"
+  wind:
+    name: Viento fuerte
+    playbook:
+      before:
+        - "Retrasar los herbicidas cuando el viento supere los 15 mph"
+        - "Mantener residuo en superficie para reducir la erosión eólica"
+      during:
+        - "Parar las pulverizaciones y asegurar los equipos de riego"
+      after:
+        - "Revisar daños por abrasión en plantas jóvenes"
+  erosion:
+    name: Erosión del suelo
+    playbook:
+      before:
+        - "Mantener cubierta o rastrojo en superficie durante el invierno"
+        - "Labrar siguiendo las curvas de nivel, no pendiente arriba y abajo"
+      during:
+        - "Evitar labrar antes de lluvias previstas de alta intensidad"
+      after:
+        - "Detectar surcos y cárcavas y rellenarlos antes del invierno"
+  hail:
+    name: Granizo
+    playbook:
+      before:
+        - "Revisar la cobertura del seguro de granizo antes de la campaña"
+      during:
+        - "No refugiarse en el campo; ir a un edificio"
+      after:
+        - "Esperar 7–10 días antes de evaluar el daño por defoliación"
+        - "Documentar el daño con fotos fechadas para el parte"
+  wildfire:
+    name: Incendio
+    playbook:
+      before:
+        - "Mantener una franja limpia alrededor de estructuras y depósitos"
+        - "Tener un plan de evacuación y un punto de encuentro"
+      during:
+        - "Seguir las instrucciones de emergencias y evacuar cuando lo indiquen"
+      after:
+        - "No volver hasta que las autoridades lo declaren seguro"
+        - "Revisar puntos calientes e infraestructura dañada"

@@ -1,0 +1,222 @@
+# ROOTSHIFT crop catalog — Kansas pilot
+# Values are documented starting points. Each entry must cite a source.
+# [P] = proposed parameter, verify against FAO-56 (Table 12) and FAO-33 before production use.
+version: "2.0.0"
+region: us_ks
+
+crops:
+  - id: corn
+    name_en: Corn
+    name_sci: Zea mays
+    family: poaceae
+    cycle_type: annual
+    stand_seasons: 1
+    is_legume: false
+    season: S
+    cover: false
+    kc: { ini: 0.30, mid: 1.20, end: 0.35 }
+    stage_days: { ini: 25, dev: 40, mid: 55, late: 30 }
+    zr_max_m: 1.7
+    p_depletion: 0.55
+    gdd_base_c: 10
+    gdd_to_maturity: 1500
+    ky: 1.25
+    t_frost_critical_c: 0
+    t_heat_critical_c: 35
+    flowering_window_days: 20
+    hse_ref: 60
+    fse_ref: 20
+    sowing_window: [{ doy_from: 105, doy_to: 135 }]
+    source: "FAO-56 Table 12; FAO-33 — verify"
+
+  - id: soybean
+    name_en: Soybean
+    name_sci: Glycine max
+    family: fabaceae
+    cycle_type: annual
+    stand_seasons: 1
+    is_legume: true
+    season: S
+    cover: false
+    kc: { ini: 0.40, mid: 1.15, end: 0.50 }
+    stage_days: { ini: 20, dev: 35, mid: 50, late: 25 }
+    zr_max_m: 1.3
+    p_depletion: 0.50
+    gdd_base_c: 10
+    gdd_to_maturity: 1300
+    ky: 0.85
+    t_frost_critical_c: 0
+    t_heat_critical_c: 35
+    flowering_window_days: 25
+    hse_ref: 55
+    fse_ref: 18
+    sowing_window: [{ doy_from: 120, doy_to: 150 }]
+    source: "FAO-56 Table 12; FAO-33 — verify"
+
+  - id: winter_wheat
+    name_en: Winter wheat
+    name_sci: Triticum aestivum
+    family: poaceae
+    cycle_type: annual
+    stand_seasons: 1
+    is_legume: false
+    season: W
+    cover: false
+    kc: { ini: 0.40, mid: 1.15, end: 0.30 }
+    stage_days: { ini: 30, dev: 140, mid: 60, late: 30 }
+    zr_max_m: 1.5
+    p_depletion: 0.55
+    gdd_base_c: 0
+    gdd_to_maturity: 2100
+    ky: 1.15
+    t_frost_critical_c: -12
+    t_heat_critical_c: 32
+    flowering_window_days: 20
+    hse_ref: 45
+    fse_ref: 20
+    sowing_window: [{ doy_from: 270, doy_to: 310 }]
+    source: "FAO-56 Table 12; FAO-33 — verify"
+
+  - id: grain_sorghum
+    name_en: Grain sorghum
+    name_sci: Sorghum bicolor
+    family: poaceae
+    cycle_type: annual
+    stand_seasons: 1
+    is_legume: false
+    season: S
+    cover: false
+    kc: { ini: 0.30, mid: 1.05, end: 0.55 }
+    stage_days: { ini: 20, dev: 35, mid: 50, late: 25 }
+    zr_max_m: 1.7
+    p_depletion: 0.55
+    gdd_base_c: 10
+    gdd_to_maturity: 1500
+    ky: 0.90
+    t_frost_critical_c: 0
+    t_heat_critical_c: 38
+    flowering_window_days: 20
+    hse_ref: 70
+    fse_ref: 18
+    sowing_window: [{ doy_from: 135, doy_to: 165 }]
+    source: "FAO-56 Table 12; FAO-33 — verify"
+
+  - id: alfalfa
+    name_en: Alfalfa
+    name_sci: Medicago sativa
+    family: fabaceae
+    cycle_type: perennial
+    stand_seasons: 3
+    is_legume: true
+    season: S
+    cover: false
+    kc: { ini: 0.40, mid: 0.95, end: 0.90 }
+    stage_days: { ini: 30, dev: 30, mid: 120, late: 30 }
+    zr_max_m: 2.0
+    p_depletion: 0.55
+    gdd_base_c: 5
+    gdd_to_maturity: 2000
+    ky: 1.00
+    t_frost_critical_c: -5
+    t_heat_critical_c: 35
+    flowering_window_days: 0
+    hse_ref: 80
+    fse_ref: 15
+    sowing_window: [{ doy_from: 90, doy_to: 135 }]
+    source: "FAO-56 Table 12 — verify"
+
+  - id: oats
+    name_en: Oats
+    name_sci: Avena sativa
+    family: poaceae
+    cycle_type: annual
+    stand_seasons: 1
+    is_legume: false
+    season: S
+    cover: false
+    kc: { ini: 0.30, mid: 1.15, end: 0.25 }
+    stage_days: { ini: 20, dev: 30, mid: 45, late: 25 }
+    zr_max_m: 1.5
+    p_depletion: 0.50
+    gdd_base_c: 5
+    gdd_to_maturity: 1200
+    ky: 1.00
+    t_frost_critical_c: -4
+    t_heat_critical_c: 30
+    flowering_window_days: 15
+    hse_ref: 40
+    fse_ref: 18
+    sowing_window: [{ doy_from: 75, doy_to: 105 }]
+    source: "FAO-56 Table 12; FAO-33 — verify"
+
+  - id: sunflower
+    name_en: Sunflower
+    name_sci: Helianthus annuus
+    family: asteraceae
+    cycle_type: annual
+    stand_seasons: 1
+    is_legume: false
+    season: S
+    cover: false
+    kc: { ini: 0.35, mid: 1.10, end: 0.35 }
+    stage_days: { ini: 25, dev: 35, mid: 45, late: 25 }
+    zr_max_m: 1.5
+    p_depletion: 0.45
+    gdd_base_c: 7
+    gdd_to_maturity: 1400
+    ky: 1.00
+    t_frost_critical_c: -2
+    t_heat_critical_c: 34
+    flowering_window_days: 20
+    hse_ref: 50
+    fse_ref: 16
+    sowing_window: [{ doy_from: 120, doy_to: 150 }]
+    source: "FAO-56 Table 12; FAO-33 — verify"
+
+  - id: canola
+    name_en: Winter canola
+    name_sci: Brassica napus
+    family: brassicaceae
+    cycle_type: annual
+    stand_seasons: 1
+    is_legume: false
+    season: W
+    cover: false
+    kc: { ini: 0.35, mid: 1.10, end: 0.35 }
+    stage_days: { ini: 30, dev: 120, mid: 50, late: 25 }
+    zr_max_m: 1.4
+    p_depletion: 0.50
+    gdd_base_c: 5
+    gdd_to_maturity: 1800
+    ky: 1.00
+    t_frost_critical_c: -8
+    t_heat_critical_c: 30
+    flowering_window_days: 20
+    hse_ref: 40
+    fse_ref: 18
+    sowing_window: [{ doy_from: 250, doy_to: 290 }]
+    source: "FAO-56 Table 12 — verify"
+
+  - id: cereal_rye
+    name_en: Cereal rye (cover)
+    name_sci: Secale cereale
+    family: poaceae
+    cycle_type: annual
+    stand_seasons: 1
+    is_legume: false
+    season: W
+    cover: true
+    kc: { ini: 0.30, mid: 1.00, end: 0.40 }
+    stage_days: { ini: 20, dev: 60, mid: 40, late: 20 }
+    zr_max_m: 1.2
+    p_depletion: 0.55
+    gdd_base_c: 0
+    gdd_to_maturity: 1400
+    ky: 0.70
+    t_frost_critical_c: -15
+    t_heat_critical_c: 32
+    flowering_window_days: 0
+    hse_ref: 40
+    fse_ref: 15
+    sowing_window: [{ doy_from: 240, doy_to: 300 }]
+    source: "cover crop — [P]"

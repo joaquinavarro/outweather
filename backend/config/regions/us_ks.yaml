@@ -1,0 +1,64 @@
+# ROOTSHIFT region configuration — Kansas pilot (D7).
+# Changing this file must be enough to support another US state.
+version: "2.0.0"
+
+regions:
+  - id: us_ks
+    name: Kansas
+    country: US
+    state_fips: "20"
+    seasons_per_year: 1
+    utm_epsg: 32614
+    crops:
+      - corn
+      - soybean
+      - winter_wheat
+      - grain_sorghum
+      - alfalfa
+      - oats
+      - sunflower
+      - canola
+      - cereal_rye
+    counties:
+      - name: Finney
+        fips: "055"
+        areasymbol: KS055
+      - name: Greeley
+        fips: "071"
+        areasymbol: KS071
+      - name: Republic
+        fips: "157"
+        areasymbol: KS157
+    demo_farms:
+      - id: demo_finney
+        name: "North 80 (Finney)"
+        county: Finney
+        label: "Irrigated corn, center pivot"
+        location: { lat: 38.0500, lon: -100.9200 }
+        parcel_radius_deg: { lat: 0.0032, lon: 0.0036 }
+        production_system: conventional
+        irrigation: { status: irrigated, system: center_pivot, flow_l_s: 40, annual_limit_m3: 180000, energy: grid, hours_per_day: 20 }
+        current_crops: [{ crop_id: corn, area_share: 1.0 }]
+        resources: { machinery: [tractor_200hp, planter, combine, sprayer], labor: { permanent: 2, seasonal: 1 }, fertility: { n_kg_ha: 180, p2o5_kg_ha: 60, k2o_kg_ha: 40 }, cover_crop_seed: true, storage_t: 500 }
+
+      - id: demo_greeley
+        name: "Greeley Dryland"
+        county: Greeley
+        label: "Dryland wheat–sorghum–fallow"
+        location: { lat: 38.4800, lon: -101.7500 }
+        parcel_radius_deg: { lat: 0.0040, lon: 0.0045 }
+        production_system: conventional
+        irrigation: { status: rainfed, system: none, flow_l_s: 0, annual_limit_m3: 0, energy: none, hours_per_day: 0 }
+        current_crops: [{ crop_id: winter_wheat, area_share: 0.5 }, { crop_id: grain_sorghum, area_share: 0.5 }]
+        resources: { machinery: [tractor_150hp, seeder, combine, sprayer], labor: { permanent: 1, seasonal: 1 }, fertility: { n_kg_ha: 50, p2o5_kg_ha: 20, k2o_kg_ha: 0 }, cover_crop_seed: false, storage_t: 200 }
+
+      - id: demo_republic
+        name: "Republic 160"
+        county: Republic
+        label: "Rainfed corn–soybean"
+        location: { lat: 39.8000, lon: -97.6500 }
+        parcel_radius_deg: { lat: 0.0036, lon: 0.0042 }
+        production_system: conventional
+        irrigation: { status: rainfed, system: none, flow_l_s: 0, annual_limit_m3: 0, energy: none, hours_per_day: 0 }
+        current_crops: [{ crop_id: corn, area_share: 0.5 }, { crop_id: soybean, area_share: 0.5 }]
+        resources: { machinery: [tractor_180hp, planter, combine, sprayer], labor: { permanent: 1, seasonal: 2 }, fertility: { n_kg_ha: 140, p2o5_kg_ha: 45, k2o_kg_ha: 30 }, cover_crop_seed: true, storage_t: 300 }

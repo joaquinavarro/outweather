@@ -1,0 +1,124 @@
+# Spanish copy for the disease catalog, keyed by disease id (spec D16).
+# English lives in diseases.yaml and stays the source of truth for the engine.
+version: "1.0.0"
+
+diseases:
+  gray_leaf_spot_corn:
+    name: Mancha gris del maíz
+    actions:
+      cultural:
+        - "Rotar a un cultivo no hospedante al menos 2 campañas"
+        - "Enterrar o retirar el rastrojo"
+        - "Elegir un híbrido con mejor resistencia"
+      monitoring:
+        - "Vigilar desde V8 si llueve más de 10 mm"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico; no se prescriben dosis"
+  northern_corn_leaf_blight:
+    name: Tizón foliar norteño del maíz
+    actions:
+      cultural:
+        - "Rotar fuera del maíz al menos una campaña"
+        - "Gestionar el rastrojo"
+      monitoring:
+        - "Vigilar tras periodos frescos y húmedos"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  tar_spot_corn:
+    name: Mancha alquitranada del maíz
+    actions:
+      cultural:
+        - "Rotar y gestionar el rastrojo"
+        - "Evitar híbridos muy susceptibles en parcelas de riesgo"
+      monitoring:
+        - "Vigilar desde V10 en campañas frescas y húmedas"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  sudden_death_syndrome:
+    name: Síndrome de muerte súbita de la soja
+    actions:
+      cultural:
+        - "Mejorar el drenaje y evitar siembras tempranas en suelos húmedos"
+        - "Rotar con un cultivo no hospedante"
+      monitoring:
+        - "Vigilar síntomas foliares tras periodos húmedos"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  white_mold_soybean:
+    name: Moho blanco de la soja
+    actions:
+      cultural:
+        - "Ampliar la separación entre líneas y reducir la densidad en parcelas de riesgo"
+        - "Rotar con un cultivo no hospedante"
+      monitoring:
+        - "Vigilar durante la floración tras humedad prolongada"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  frogeye_leaf_spot:
+    name: Mancha ojo de rana
+    actions:
+      cultural:
+        - "Rotar y enterrar el rastrojo"
+      monitoring:
+        - "Vigilar desde la floración"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  fusarium_head_blight:
+    name: Fusariosis de la espiga
+    actions:
+      cultural:
+        - "Rotar lejos del rastrojo de maíz y trigo"
+        - "Evitar espigados tempranos en campañas de riesgo"
+      monitoring:
+        - "Vigilar en el espigado si se prevé lluvia"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  septoria_tritici:
+    name: Septoriosis del trigo
+    actions:
+      cultural:
+        - "Rotar con un cultivo no cerealícola al menos 2 campañas"
+        - "Enterrar el rastrojo"
+      monitoring:
+        - "Vigilar desde el encañado tras periodos húmedos"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  leaf_rust_wheat:
+    name: Roya parda del trigo
+    actions:
+      cultural:
+        - "Controlar el trigo guacho"
+        - "Usar variedades resistentes"
+      monitoring:
+        - "Vigilar desde el encañado"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  anthracnose_sorghum:
+    name: Antracnosis del sorgo
+    actions:
+      cultural:
+        - "Rotar y gestionar el rastrojo"
+        - "Usar híbridos tolerantes"
+      monitoring:
+        - "Vigilar tras periodos cálidos y húmedos"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  gray_leaf_spot_sorghum:
+    name: Mancha gris del sorgo
+    actions:
+      cultural:
+        - "Rotar y enterrar el rastrojo"
+      monitoring:
+        - "Vigilar desde el estado de bota"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"
+  spring_black_stem:
+    name: Tallo negro primaveral de la alfalfa
+    actions:
+      cultural:
+        - "Cosechar pronto y gestionar el residuo"
+        - "Evitar el tráfico sobre el cultivo húmedo"
+      monitoring:
+        - "Vigilar el rebrote de primavera"
+      chemical:
+        - "Seguir la etiqueta y consultar a un técnico"

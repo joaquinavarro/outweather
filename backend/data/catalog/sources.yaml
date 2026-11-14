@@ -1,0 +1,39 @@
+# ROOTSHIFT dataset registry — the only source of attribution shown in the UI.
+# short_name is the authoritative key; DOIs must be resolved at ingest time and
+# written back here (spec §7.2). Never hardcode a DOI in the engine.
+version: "2.0.0"
+
+products:
+  - { id: P01, short_name: SPL4SMGP, name: "SMAP L4 Soil Moisture", daac: NSIDC, auth: earthdata, kind: smap }
+  - { id: P02, short_name: SPL3SMP_E, name: "SMAP L3 Enhanced", daac: NSIDC, auth: earthdata, kind: smap }
+  - { id: P03, short_name: SPL4CMDL, name: "SMAP L4 Carbon", daac: NSIDC, auth: earthdata, kind: smap }
+  - { id: P04, short_name: GPM_3IMERGDF, name: "GPM IMERG Final Daily", daac: GES_DISC, auth: earthdata, kind: imerg }
+  - { id: P05, short_name: GPM_3IMERGHH, name: "GPM IMERG Final 30-min", daac: GES_DISC, auth: earthdata, kind: imerg }
+  - { id: P06, short_name: MOD13Q1, name: "MODIS Vegetation Indices", daac: LPDAAC, auth: earthdata, doi: "10.5067/MODIS/MOD13Q1.061", kind: modis }
+  - { id: P07, short_name: MOD11A2, name: "MODIS Land Surface Temperature", daac: LPDAAC, auth: earthdata, doi: "10.5067/MODIS/MOD11A2.061", kind: modis }
+  - { id: P08, short_name: MOD16A2GF, name: "MODIS ET (gap-filled)", daac: LPDAAC, auth: earthdata, doi: "10.5067/MODIS/MOD16A2GF.061", kind: modis }
+  - { id: P09, short_name: MOD17A3HGF, name: "MODIS NPP/GPP annual", daac: LPDAAC, auth: earthdata, doi: "10.5067/MODIS/MOD17A3HGF.061", kind: modis }
+  - { id: P10, short_name: MCD12Q1, name: "MODIS Land Cover", daac: LPDAAC, auth: earthdata, doi: "10.5067/MODIS/MCD12Q1.061", kind: modis }
+  - { id: P11, short_name: HLSL30, name: "HLS Landsat", daac: LPDAAC, auth: earthdata, doi: "10.5067/HLS/HLSL30.002", kind: hls }
+  - { id: P12, short_name: NASADEM_HGT, name: "NASADEM", daac: LPDAAC, auth: none, doi: "10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001", kind: dem }
+  - { id: P13, short_name: GLDAS_NOAH025_3H, name: "GLDAS Noah 2.1", daac: GES_DISC, auth: earthdata, kind: gldas }
+  - { id: P14, short_name: GLDAS_CLSM025_DA1_D, name: "GLDAS CLSM 2.2 + GRACE DA", daac: GES_DISC, auth: earthdata, kind: gldas }
+  - { id: P15, short_name: POWER_DAILY, name: "NASA POWER (AG)", daac: POWER, auth: none, kind: power }
+  - { id: P16, short_name: SSURGO, name: "SSURGO", daac: USDA_NRCS, auth: none, kind: soil }
+  - { id: P17, short_name: STATSGO2, name: "STATSGO2", daac: USDA_NRCS, auth: none, kind: soil }
+  - { id: P18, short_name: GAEZ_V4, name: "FAO GAEZ v4", daac: FAO, auth: none, kind: gaez }
+  - { id: P19, short_name: OPENET, name: "OpenET", daac: OPENET, auth: apikey, kind: openet }
+  - { id: P20, short_name: AGDATA_COMMONS, name: "USDA Ag Data Commons", daac: USDA_ARS, auth: none, kind: nutrients }
+  - { id: P21, short_name: NAIP, name: "NAIP", daac: USGS, auth: none, kind: imagery }
+  - { id: P22, short_name: COCORAHS, name: "CoCoRaHS", daac: COCORAHS, auth: none, kind: precip_obs }
+  - { id: P23, short_name: GIBS, name: "NASA GIBS (imagery)", daac: EOSDIS, auth: none, kind: imagery }
+
+attribution:
+  title: "Data provided by NASA"
+  nasa_logo: "/logos/nasa.svg"
+  university: "Universidad de Alicante"
+  university_logo: "/logos/ua.svg"
+  disclaimer: >-
+    ROOTSHIFT is a simulation tool. It is not affiliated with, or endorsed by,
+    NASA, USDA or the University of Alicante. Data are used under their respective
+    open licenses. Results are not agronomic advice.

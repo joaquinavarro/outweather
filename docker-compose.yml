@@ -1,0 +1,16 @@
+services:
+  rootshift:
+    build:
+      context: .
+    image: rootshift:2.0
+    ports:
+      - "8000:8000"
+    environment:
+      DATA_MODE: demo
+    volumes:
+      # farms and rotations survive `docker compose down` (SQLite)
+      - rootshift-data:/app/backend/data/cache
+    restart: unless-stopped
+
+volumes:
+  rootshift-data:

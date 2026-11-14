@@ -1,0 +1,62 @@
+# ROOTSHIFT scoring configuration.
+# Every number here is a product assumption. It is surfaced in the UI and is
+# NOT presented as a scientific standard.
+version: "2.0.0"
+
+irs:
+  weights:
+    water: 0.25
+    stability: 0.20
+    soil: 0.20
+    diversity: 0.15
+    health: 0.10
+    hazard: 0.10
+  water:
+    et_ratio_weight: 0.5
+    coverage_weight: 0.3
+    groundwater_weight: 0.2
+    groundwater_penalty_declining: 0.5
+    groundwater_penalty_critical: 0.0
+    groundwater_critical_mm_year: -10.0
+  stability:
+    cv_ceiling: 0.5
+  soil:
+    nee_weight: 0.25
+    npp_weight: 0.20
+    erosion_weight: 0.25
+    legume_weight: 0.15
+    nitrogen_weight: 0.15
+    npp_reference_gc_m2_year: 600.0
+    erosion_tolerance_t_ha_year: 7.0
+    nee_sink_threshold: 0.0
+    nee_neutral_band: 20.0
+    nitrogen_deficit_soft_kg_ha: 20.0
+  health:
+    fi_weight: 1.0
+
+objective_weights:
+  production: { production: 0.45, resilience: 0.15, water: 0.10, diversity: 0.10, failure: 0.15, cv: 0.05 }
+  balanced:   { production: 0.25, resilience: 0.25, water: 0.15, diversity: 0.10, failure: 0.15, cv: 0.10 }
+  resilience: { production: 0.15, resilience: 0.40, water: 0.15, diversity: 0.10, failure: 0.15, cv: 0.05 }
+  water:      { production: 0.15, resilience: 0.20, water: 0.40, diversity: 0.10, failure: 0.10, cv: 0.05 }
+
+risk_tolerance_multiplier:
+  low: 1.5
+  medium: 1.0
+  high: 0.6
+
+simulation:
+  n_scenarios: 1000
+  seed: 42
+  horizon_seasons: 8
+  beam_width: 48
+  top_k: 20
+  failure_ratio: 0.6
+  good_year_ratio: 0.7
+  recovery_ratio: 0.9
+  unmodeled_sigma: 0.12
+
+confidence:
+  min_years: 24
+  assumption_penalties: [1.0, 0.9, 0.75, 0.6]
+  source_penalties: { primary: 1.0, one_fallback: 0.9, two_fallbacks: 0.75, default_soil: 0.6 }

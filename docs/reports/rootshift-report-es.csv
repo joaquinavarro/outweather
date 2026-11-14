@@ -1,0 +1,65 @@
+﻿# farm
+name,North 80 (Finney)
+county,Finney
+area_ha,44.9
+confidence,85
+locale,es-ES
+
+# metrics
+key,value
+irs,81.1
+irs_label,highly_resilient
+production_index,92.1
+p10_index,86.6
+p50_index,92.0
+p90_index,97.6
+p_fail,0.0061
+recovery_years,1.87
+p_drought3,0.0
+
+# rotation
+Campaña,Cultivo,crop_id,Familia,nir_mm,yield_t_ha
+2026,Girasol,sunflower,asteraceae,582.1,2.14
+2027,Sorgo grano,grain_sorghum,poaceae,574.0,6.25
+2028,Soja,soybean,fabaceae,654.1,3.2
+2029,Sorgo grano,grain_sorghum,poaceae,574.0,6.25
+2030,Soja,soybean,fabaceae,654.1,3.2
+2031,Sorgo grano,grain_sorghum,poaceae,574.0,6.25
+2032,Girasol,sunflower,asteraceae,582.1,2.14
+2033,Sorgo grano,grain_sorghum,poaceae,574.0,6.25
+
+# scenarios
+scenario,p10_index,p50_index,p90_index,cv,p_fail
+S0,86.6,92.0,97.6,0.0469,0.0061
+S1,79.7,84.2,88.9,0.0437,0.0185
+S2,83.4,88.5,94.0,0.0476,0.0116
+S3,80.2,85.4,90.5,0.0465,0.0232
+S4,83.8,89.1,95.2,0.0495,0.011
+S5,82.8,88.2,93.9,0.0491,0.0139
+S6,83.9,89.0,94.7,0.0482,0.0147
+S7,79.2,84.4,90.3,0.0513,0.034
+
+# nutrients
+key,value
+n_removal_kg_ha,118.4
+p2o5_removal_kg_ha,39.5
+k2o_removal_kg_ha,45.8
+n_fixation_kg_ha,14.0
+n_input_kg_ha,180.0
+p2o5_input_kg_ha,60.0
+k2o_input_kg_ha,40.0
+n_balance_kg_ha,75.6
+p2o5_balance_kg_ha,20.5
+k2o_balance_kg_ha,-5.8
+n_status,balanced
+p_status,balanced
+k_status,slight deficit
+inputs_declared,True
+
+# findings
+code,severity,params
+LEGUME_BREAK,positive,{'count': 2}
+FAMILY_BREAK,positive,{}
+PRODUCTION_SHIFT,positive,"{'pct': 25.3, 'current_index': 73.5, 'proposed_index': 92.1}"
+CARBON_GAIN,positive,{'nee': -158.1}
+DROUGHT_SENSITIVITY,positive,"{'proposed': 89.0, 'current': 69.0}"

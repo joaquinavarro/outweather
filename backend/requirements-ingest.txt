@@ -1,0 +1,5 @@
+# Only needed to re-ingest raw NASA granules (pipeline/ingest_*.py).
+# The app itself does not import these at runtime.
+fsspec>=2024.6
+h5py>=3.11
+s3fs>=2024.6

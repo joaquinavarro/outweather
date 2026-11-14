@@ -1,0 +1,43 @@
+# ROOTSHIFT rotation-effect multipliers (f_rot).
+# Evaluated in order; the first matching rule wins. `pairs` override everything.
+# This is a declared agronomic assumption, not measured fertility. Show it in the UI.
+version: "2.0.0"
+default: 1.0
+
+pairs:
+  - { from: alfalfa, to: "*", value: 1.12 }
+  - { from: "*", to: alfalfa, value: 1.00 }
+  - { from: cereal_rye, to: "*", value: 1.05 }
+  - { from: fallow, to: "*", value: 1.05 }
+
+rules:
+  - id: same_species
+    from_same_as_to: true
+    value: 0.80
+  - id: same_family
+    from_family_equals_to_family: true
+    value: 0.75
+  - id: legume_to_cereal
+    from_family: fabaceae
+    to_family: poaceae
+    value: 1.10
+  - id: legume_to_legume
+    from_family: fabaceae
+    to_family: fabaceae
+    value: 0.90
+  - id: cereal_to_cereal
+    from_family: poaceae
+    to_family: poaceae
+    value: 0.95
+  - id: cereal_to_legume
+    from_family: poaceae
+    to_family: fabaceae
+    value: 1.00
+  - id: broadleaf_to_cereal
+    from_family: asteraceae
+    to_family: poaceae
+    value: 1.00
+  - id: brassica_to_cereal
+    from_family: brassicaceae
+    to_family: poaceae
+    value: 1.03

@@ -1,0 +1,14 @@
+# Never bake credentials or local caches into the image.
+.env
+.env.*
+**/__pycache__
+**/*.pyc
+backend/data/cache
+backend/data/fixtures/*.json.bak
+frontend/node_modules
+frontend/.next
+frontend/out
+frontend/tests
+docs
+*.md
+.git

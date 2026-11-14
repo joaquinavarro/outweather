@@ -1,0 +1,123 @@
+# ROOTSHIFT hazard catalog and action protocols.
+# calculable=false means no dataset in the project catalog can support a
+# probability estimate: the UI shows "protocol only" and no number.
+version: "2.0.0"
+
+hazards:
+  - id: drought
+    name_en: Drought
+    calculable: true
+    source: "IMERG (SPEI, Rx1day) + SMAP L4 (ADD)"
+    window_months: [3, 9]
+    playbook:
+      before:
+        - { step: 1, action: "Switch to a shorter-season hybrid if March SPEI-3 is below -0.8", trigger: "spei_3 < -0.8", lead_time_days: 45 }
+        - { step: 2, action: "Keep residue on the surface to cut evaporation", trigger: "always", lead_time_days: 90 }
+        - { step: 3, action: "Pre-irrigate to refill the root zone before the heat", trigger: "sm_rz_pct < 30", lead_time_days: 21 }
+      during:
+        - { step: 1, action: "Prioritize the available water at flowering", trigger: "add_days > 21", lead_time_days: 0 }
+        - { step: 2, action: "Delay nitrogen top-dress until rain is likely", trigger: "cdd > 14", lead_time_days: 0 }
+      after:
+        - { step: 1, action: "Avoid tillage while the soil is dry", trigger: "always", lead_time_days: 0 }
+        - { step: 2, action: "Plant a cover crop after the first effective rain", trigger: "pr_7d > 15", lead_time_days: 7 }
+
+  - id: flood
+    name_en: Flooding
+    calculable: true
+    source: "IMERG (Rx1day) + GLDAS runoff + NASADEM slope"
+    window_months: [4, 9]
+    playbook:
+      before:
+        - { step: 1, action: "Keep field drainage ditches and outlets clear", trigger: "always", lead_time_days: 60 }
+        - { step: 2, action: "Avoid planting the lowest part of the field to a high-value crop", trigger: "always", lead_time_days: 120 }
+      during:
+        - { step: 1, action: "Do not enter the field with machinery while ponded", trigger: "pr_24h > 25", lead_time_days: 0 }
+        - { step: 2, action: "Document the flooded area for insurance", trigger: "always", lead_time_days: 0 }
+      after:
+        - { step: 1, action: "Check for crusting and re-plant gaps once drained", trigger: "always", lead_time_days: 3 }
+        - { step: 2, action: "Watch for root disease in waterlogged patches", trigger: "always", lead_time_days: 10 }
+
+  - id: frost
+    name_en: Frost
+    calculable: true
+    source: "POWER (Tmin) + MOD11A2 (land surface temperature)"
+    window_months: [3, 5]
+    playbook:
+      before:
+        - { step: 1, action: "Use the 10% frost date, not the average, for early planting", trigger: "always", lead_time_days: 30 }
+        - { step: 2, action: "Keep a frost-tolerant cover on sensitive fields", trigger: "always", lead_time_days: 60 }
+      during:
+        - { step: 1, action: "Irrigate before a radiative frost night to raise surface heat", trigger: "lst_night < 0", lead_time_days: 0 }
+      after:
+        - { step: 1, action: "Assess emergence and re-plant only if the stand is below 70%", trigger: "always", lead_time_days: 5 }
+
+  - id: heat
+    name_en: Heat wave
+    calculable: true
+    source: "POWER (Tmax) + MOD11A2"
+    window_months: [6, 8]
+    playbook:
+      before:
+        - { step: 1, action: "Avoid planting dates that put flowering in the hottest week", trigger: "always", lead_time_days: 60 }
+        - { step: 2, action: "Choose hybrids with better heat tolerance", trigger: "always", lead_time_days: 120 }
+      during:
+        - { step: 1, action: "Keep the crop unstressed at flowering; irrigate if possible", trigger: "tmax > 35", lead_time_days: 0 }
+      after:
+        - { step: 1, action: "Check pollination and adjust harvest expectations", trigger: "always", lead_time_days: 10 }
+
+  - id: wind
+    name_en: High wind
+    calculable: true
+    source: "POWER (WS2M, daily mean)"
+    window_months: [3, 7]
+    playbook:
+      before:
+        - { step: 1, action: "Delay herbicide application when wind exceeds 15 mph", trigger: "ws > 6.7", lead_time_days: 0 }
+        - { step: 2, action: "Maintain surface residue to reduce wind erosion", trigger: "always", lead_time_days: 90 }
+      during:
+        - { step: 1, action: "Stop spraying and secure irrigation equipment", trigger: "ws_gust > 25", lead_time_days: 0 }
+      after:
+        - { step: 1, action: "Check for sandblasting damage on young plants", trigger: "always", lead_time_days: 2 }
+
+  - id: erosion
+    name_en: Soil erosion
+    calculable: true
+    source: "RUSLE: IMERG + NASADEM + SSURGO + rotation"
+    window_months: [1, 12]
+    playbook:
+      before:
+        - { step: 1, action: "Keep a cover crop or residue on the surface over winter", trigger: "always", lead_time_days: 120 }
+        - { step: 2, action: "Farm across the slope instead of up and down", trigger: "slope_pct > 2", lead_time_days: 90 }
+      during:
+        - { step: 1, action: "Avoid tillage before forecast high-intensity rain", trigger: "rx1day_forecast > 25", lead_time_days: 3 }
+      after:
+        - { step: 1, action: "Look for rills and gullies and fill them before winter", trigger: "always", lead_time_days: 15 }
+
+  - id: hail
+    name_en: Hail
+    calculable: false
+    source: "No dataset in the project catalog"
+    window_months: [4, 8]
+    playbook:
+      before:
+        - { step: 1, action: "Review hail insurance coverage before the season", trigger: "always", lead_time_days: 90 }
+      during:
+        - { step: 1, action: "Do not shelter in the field; move to a building", trigger: "always", lead_time_days: 0 }
+      after:
+        - { step: 1, action: "Wait 7-10 days before assessing defoliation damage", trigger: "always", lead_time_days: 7 }
+        - { step: 2, action: "Document damage with dated photos for the claim", trigger: "always", lead_time_days: 1 }
+
+  - id: wildfire
+    name_en: Wildfire
+    calculable: false
+    source: "No FIRMS product in the project catalog"
+    window_months: [3, 11]
+    playbook:
+      before:
+        - { step: 1, action: "Keep a mowed defensible space around structures and fuel tanks", trigger: "always", lead_time_days: 120 }
+        - { step: 2, action: "Have an evacuation plan and a meeting point", trigger: "always", lead_time_days: 120 }
+      during:
+        - { step: 1, action: "Follow local emergency instructions and evacuate when told", trigger: "always", lead_time_days: 0 }
+      after:
+        - { step: 1, action: "Do not return until authorities declare it safe", trigger: "always", lead_time_days: 0 }
+        - { step: 2, action: "Check for hot spots and damaged infrastructure", trigger: "always", lead_time_days: 1 }

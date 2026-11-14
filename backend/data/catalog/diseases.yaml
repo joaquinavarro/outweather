@@ -1,0 +1,232 @@
+# ROOTSHIFT disease catalog — Kansas pilot
+# Cardinal temperatures and wetness requirements are [P] starting values,
+# pending agronomist validation (D11). Never used to prescribe products or rates.
+version: "2.0.0"
+
+diseases:
+  - id: gray_leaf_spot_corn
+    name_en: Gray leaf spot
+    pathogen: Cercospora zeae-maydis
+    crops: [corn]
+    cardinal_temp: { min: 15, opt_lo: 22, opt_hi: 30, max: 35 }
+    wetness_hours_required: 12
+    susceptible_stages: [v8, tasseling, silking]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.8
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Rotate to a non-host crop for at least 2 seasons"
+        - "Bury or remove residue"
+        - "Choose a hybrid with better resistance"
+      monitoring:
+        - "Scout from V8 onward if rainfall exceeds 10 mm"
+      chemical:
+        - "Follow the label and consult an agronomist; no rates are prescribed"
+
+  - id: northern_corn_leaf_blight
+    name_en: Northern corn leaf blight
+    pathogen: Exserohilum turcicum
+    crops: [corn]
+    cardinal_temp: { min: 10, opt_lo: 18, opt_hi: 27, max: 32 }
+    wetness_hours_required: 8
+    susceptible_stages: [v8, tasseling]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.7
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Rotate out of corn for at least 1 season"
+        - "Manage residue"
+      monitoring:
+        - "Scout after cool, wet periods"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: tar_spot_corn
+    name_en: Tar spot
+    pathogen: Phyllachora maydis
+    crops: [corn]
+    cardinal_temp: { min: 8, opt_lo: 16, opt_hi: 22, max: 28 }
+    wetness_hours_required: 12
+    susceptible_stages: [v10, tasseling, silking]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.7
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Rotate and manage residue"
+        - "Avoid highly susceptible hybrids in high-risk fields"
+      monitoring:
+        - "Scout from V10 in cool, humid seasons"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: sudden_death_syndrome
+    name_en: Sudden death syndrome
+    pathogen: Fusarium virguliforme
+    crops: [soybean]
+    cardinal_temp: { min: 15, opt_lo: 20, opt_hi: 25, max: 30 }
+    wetness_hours_required: 12
+    susceptible_stages: [vegetative, flowering]
+    inoculum_sources: [soil]
+    severity_weight: 0.8
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Improve drainage and avoid early planting in wet soils"
+        - "Rotate with a non-host"
+      monitoring:
+        - "Watch for foliar symptoms after wet periods"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: white_mold_soybean
+    name_en: White mold
+    pathogen: Sclerotinia sclerotiorum
+    crops: [soybean]
+    cardinal_temp: { min: 12, opt_lo: 18, opt_hi: 24, max: 30 }
+    wetness_hours_required: 16
+    susceptible_stages: [flowering, pod_fill]
+    inoculum_sources: [soil, crop_residue]
+    severity_weight: 0.8
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Widen row spacing and reduce plant density in high-risk fields"
+        - "Rotate with a non-host"
+      monitoring:
+        - "Scout during flowering after prolonged wetness"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: frogeye_leaf_spot
+    name_en: Frogeye leaf spot
+    pathogen: Cercospora sojina
+    crops: [soybean]
+    cardinal_temp: { min: 18, opt_lo: 25, opt_hi: 30, max: 35 }
+    wetness_hours_required: 8
+    susceptible_stages: [flowering, pod_fill]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.6
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Rotate and bury residue"
+      monitoring:
+        - "Scout from flowering"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: fusarium_head_blight
+    name_en: Fusarium head blight
+    pathogen: Fusarium graminearum
+    crops: [winter_wheat]
+    cardinal_temp: { min: 15, opt_lo: 20, opt_hi: 28, max: 32 }
+    wetness_hours_required: 12
+    susceptible_stages: [heading, flowering]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.9
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Rotate away from corn and wheat residue"
+        - "Avoid early heading in high-risk seasons"
+      monitoring:
+        - "Scout at heading if rain is forecast"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: septoria_tritici
+    name_en: Septoria tritici blotch
+    pathogen: Zymoseptoria tritici
+    crops: [winter_wheat]
+    cardinal_temp: { min: 5, opt_lo: 15, opt_hi: 20, max: 25 }
+    wetness_hours_required: 16
+    susceptible_stages: [tillering, stem_elongation, heading]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.7
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Rotate with a non-cereal for at least 2 seasons"
+        - "Bury residue"
+      monitoring:
+        - "Scout from stem elongation after wet periods"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: leaf_rust_wheat
+    name_en: Leaf rust
+    pathogen: Puccinia triticina
+    crops: [winter_wheat]
+    cardinal_temp: { min: 5, opt_lo: 15, opt_hi: 22, max: 28 }
+    wetness_hours_required: 6
+    susceptible_stages: [stem_elongation, heading]
+    inoculum_sources: [volunteer_cereals]
+    severity_weight: 0.7
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Control volunteer wheat"
+        - "Use resistant varieties"
+      monitoring:
+        - "Scout from stem elongation"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: anthracnose_sorghum
+    name_en: Anthracnose
+    pathogen: Colletotrichum sublineola
+    crops: [grain_sorghum]
+    cardinal_temp: { min: 15, opt_lo: 22, opt_hi: 28, max: 35 }
+    wetness_hours_required: 10
+    susceptible_stages: [vegetative, heading]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.6
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Rotate and manage residue"
+        - "Use tolerant hybrids"
+      monitoring:
+        - "Scout after warm, wet periods"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: gray_leaf_spot_sorghum
+    name_en: Gray leaf spot
+    pathogen: Cercospora sorghi
+    crops: [grain_sorghum]
+    cardinal_temp: { min: 15, opt_lo: 22, opt_hi: 30, max: 35 }
+    wetness_hours_required: 12
+    susceptible_stages: [vegetative, heading]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.6
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Rotate and bury residue"
+      monitoring:
+        - "Scout from boot stage"
+      chemical:
+        - "Follow the label and consult an agronomist"
+
+  - id: spring_black_stem
+    name_en: Spring black stem
+    pathogen: Phoma medicaginis
+    crops: [alfalfa]
+    cardinal_temp: { min: 5, opt_lo: 15, opt_hi: 22, max: 28 }
+    wetness_hours_required: 12
+    susceptible_stages: [spring_regrowth, first_cut]
+    inoculum_sources: [crop_residue]
+    severity_weight: 0.6
+    confidence: preliminary
+    actions:
+      cultural:
+        - "Harvest early and manage residue"
+        - "Avoid traffic on wet stands"
+      monitoring:
+        - "Scout spring regrowth"
+      chemical:
+        - "Follow the label and consult an agronomist"
